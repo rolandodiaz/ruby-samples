@@ -1,0 +1,24 @@
+<header class=hero-unit>
+  <h1>Las sesiones del RubyConfLima</h1>
+  <p>La primera edicion del RubyConfLima</p>
+</header>
+
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% sesiones.each do |sesion | %>
+      <tr>
+        <th><a href=<%= "/sesiones/#{sesion.id}" %>><%= sesion.title %></a></th>
+        <th><%= sesion.ponente %></th>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

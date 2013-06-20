@@ -1,0 +1,18 @@
+<h1>Sube tu ponencia </h1>
+
+<% unless sesion.errors.empty? %>
+  <div class="alert alert-error">
+    Completa los campos en rojo
+  </div>
+<% end %>
+
+
+<form method=post action="/sesiones/crear">
+	<input type=text name=title placeholder="El titulo de tu sesion" class="<%= ('error' unless sesion.errors[:title].empty?) %>" value="<%= sesion.title %>"/>
+ 	<br>
+ 	<input type=text name=ponente placeholder="Ponente" class="<%= ('error' unless sesion.errors[:ponente].empty?) %>" value="<%= sesion.ponente %>"/>
+ 	<br>
+ 	<textarea name=description placeholder="La descripcion de la sesion" class="<%= ('error' unless sesion.errors[:description].empty?) %>" value="<%= sesion.description %>"></textarea>
+ 	<br>
+ 	<button type=submit class="btn btn-large btn-success">Subir</button>
+</form>
