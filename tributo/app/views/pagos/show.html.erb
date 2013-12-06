@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Arbitrio:</b>
+  <%= @pago.arbitrio %>
+</p>
+
+<p>
+  <b>Mora:</b>
+  <%= @pago.mora %>
+</p>
+
+
+<%= link_to 'Edit', edit_pago_path(@pago) %> |
+<%= link_to 'Back', pagos_path %>

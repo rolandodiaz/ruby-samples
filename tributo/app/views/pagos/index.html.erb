@@ -1,0 +1,26 @@
+<h1>Tributos</h1>
+
+<table>
+  <tr>
+    <th>Arbitrio</th>
+    <th>Mora</th>
+    <th>DNI</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pagos.each do |pago| %>
+  <tr>
+    <td><%= pago.arbitrio %></td>
+    <td><%= pago.mora %></td>
+    <td><%= pago.persona.dni %></td>
+    <td><%= link_to 'Mostrar', pago %></td>
+    <td><%= link_to 'Editar', edit_pago_path(pago) %></td>
+    <td><%= link_to 'Eliminar', pago, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Ingresar nuevo tributo', new_pago_path %>
